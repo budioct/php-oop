@@ -22,3 +22,7 @@ $person->sayHello("jamal"); // Hello jamal
 
 $person->sayHelloBro("sarah"); // Hello sarah, my name is budhi
 $person->sayHelloBro(null); // Hi, my name is budhi
+
+// akses constant yang menggunakan self keyword
+$person->info(); // AUTHOR : ANAK OM MAMAT VERSION 2
+$person->info(); // AUTHOR : ANAK OM MAMAT VERSION 2

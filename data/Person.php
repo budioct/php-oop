@@ -35,6 +35,22 @@
  * ● Saat kita membuat kode di dalam function di dalam class, kita bisa menggunakan kata kunci this
  *    untuk mengakses object saat ini
  * ● Misal kadang kita butuh mengakses properties atau function lain di class yang sama
+ *
+ * Properties vs Constant
+ * ● Saat kita membuat object, properties yang terdapat di class akan secara otomatis dibuat per
+ *    object, oleh karena itu untuk mengakses properties, kita perlu menggunakan object, atau jika dari
+ *    dalam object tersebut sendiri, kita perlu menggunakan kata kunci this
+ * ● Sedangkan berbeda dengan constant, constant di class tidak akan dibuat per object. Constant itu
+ *    hidupnya di class, bukan di object, oleh karena itu untuk mengaksesnya kita perlu menggunakan
+ *    NamaClass::NAMA_CONSTANT
+ * ● Secara sederhana, properties akan dibuat satu per instance class (object), sedangkan constant
+ *    dibuat satu per class
+ *
+ * self Keyword
+ * ● Jika di dalam class (misal di function) kita ingin mengakses constant, kita perlu mengakses
+ *    menggunakan NamaClass::NAMA_CONSTANT
+ * ● Namun jika di dalam class yang sama, kita bisa menggunakan kata kunci self untuk mempermudah
+ *
  */
 
 class Person
@@ -57,10 +73,15 @@ class Person
     function sayHelloBro(?string $name){
 
         if (is_null($name)){
-            echo "Hi, my name is {$this->name}" . PHP_EOL;
+            echo "Hi, my name is {$this->name}" . PHP_EOL; // this Keyword
         } else {
             echo "Hello $name, my name is {$this->name}" . PHP_EOL;
         }
+    }
+
+    function info(){
+
+        echo "AUTHOR : " . self::AUTHOR .PHP_EOL; // self Keyword
     }
 
 
