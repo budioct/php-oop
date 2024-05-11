@@ -9,6 +9,13 @@
  *    otomatis akan dimiliki oleh class Child
  * ● Untuk melakukan pewarisan, di class Child, kita harus menggunakan kata kunci extends lalu diikuti
  *    dengan nama class parent nya.
+ *
+ * Function Overriding
+ * ● Function overriding adalah kemampuan mendeklarasikan ulang function di child class, yang sudah
+ *    ada di parent class
+ * ● Saat kita melakukan proses overriding tersebut, secara otomatis ketika kita membuat object dari
+ *    class child, function yang di class parent tidak bisa diakses lagi
+ *
  */
 
 class Manager {
@@ -21,5 +28,10 @@ class Manager {
 }
 
 class VicePresident extends Manager {
+
+    function sayHello(string $name): void
+    {
+        echo "Hi $name, my name is Vice President $this->name" . PHP_EOL;
+    }
 
 }
