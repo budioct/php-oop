@@ -39,6 +39,9 @@
 
 class Person
 {
+
+    const AUTHOR = "ANAK OM MAMAT VERSION 2"; // constant default value
+
     var string $name;
     var string $address;
     var string $country = "Indonesia"; // default properties value
