@@ -16,10 +16,28 @@
  * ● Saat kita melakukan proses overriding tersebut, secara otomatis ketika kita membuat object dari
  *    class child, function yang di class parent tidak bisa diakses lagi
  *
+ * Constructor Overriding
+ * ● Karena constructor sama seperti function, maka constructor-pun bisa kita deklarasikan ulang di
+ *    class Child nya
+ * ● Sebenarnya di PHP, kita bisa meng-override function dengan arguments yang berbeda, namun
+ *    sangat tidak disarankan
+ * ● Jika kita melakukan override function dengan arguments berbeda, maka PHP akan menampilkan
+ *    WARNING
+ * ● Namun berbeda dengan constructor overriding, kita boleh meng-override dengan mengubah
+ *    arguments nya, namun direkomendasikan untuk memanggil parent constructor
+ *
  */
 
 class Manager {
     var string $name;
+
+    var string $title;
+
+    public function __construct(string $name = "", string $title = "Manager")
+    {
+        $this->name = $name;
+        $this->title = $title;
+    }
 
     function sayHello(string $name): void
     {
@@ -28,6 +46,12 @@ class Manager {
 }
 
 class VicePresident extends Manager {
+
+    public function __construct(string $name = "")
+    {
+        // tidak wajib tetapi di rekomendasikan
+        parent::__construct($name, "Vice President"); // constractor overriding
+    }
 
     function sayHello(string $name): void
     {
