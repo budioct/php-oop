@@ -26,19 +26,30 @@ class Data implements IteratorAggregate
     protected string $third = "Third";
     private string $forth = "Forth";
 
+//    public function getIterator()
+//    {
+//        // initialize dari properties class ke array yang akan di consume oleh implement ArrayIterator
+//        $array = [
+//            "first" => $this->first,
+//            "second" => $this->second,
+//            "third" => $this->third,
+//            "forth" => $this->forth,
+//        ];
+//
+//         return new ArrayIterator($array);
+////        $iterator = new ArrayIterator($array);
+////        return $iterator;
+////    }
+
     public function getIterator()
     {
-        // initialize dari properties class ke array yang akan di consume oleh implement ArrayIterator
-        $array = [
-            "first" => $this->first,
-            "second" => $this->second,
-            "third" => $this->third,
-            "forth" => $this->forth,
-        ];
+        // lebih simple
+        // initialize dari properties dengan keyword yield
+        yield "first" => $this->first;
+        yield "second" => $this->second;
+        yield "third" => $this->third;
+        yield "forth" => $this->forth;
 
-         return new ArrayIterator($array);
-//        $iterator = new ArrayIterator($array);
-//        return $iterator;
     }
 
 }
