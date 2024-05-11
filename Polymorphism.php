@@ -16,8 +16,8 @@ var_dump($company->programmer);
 
 // polymorphism sebagai argument
 sayHelloProgrammer(new Programmer("budhi")); // Hello Programmer budhi
-sayHelloProgrammer(new BackendProgrammer("jamal")); // Hello Programmer jamal
-sayHelloProgrammer(new FrontendProgrammer("indah")); // Hello Programmer jamal
+sayHelloProgrammer(new BackendProgrammer("jamal")); // Hello Backend Programmer jamal
+sayHelloProgrammer(new FrontendProgrammer("indah")); // Hello Frontend Programmer indah
 
 /**
  * result
