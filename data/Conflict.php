@@ -22,6 +22,16 @@ namespace Data\one {
     {
 
     }
+
+    class Sample
+    {
+
+    }
+
+    class Dummy
+    {
+
+    }
 }
 
 namespace Data\two {
