@@ -5,4 +5,4 @@ use Data\{Inova};
 
 $car = new Inova();
 $car->drive();
-$car->getTire();
+echo $car->getTire();
