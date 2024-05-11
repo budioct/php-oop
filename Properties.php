@@ -16,7 +16,7 @@
 
 require_once "data\Person.php"; // import class
 
-$person = new Person(); // instance
+$person = new Person("budhi", "tangerang"); // instance
 
 // manipulasi properties / field / attribute
 $person->name = "Budhi"; // object->properties = value

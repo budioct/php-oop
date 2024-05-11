@@ -63,6 +63,12 @@ class Person
     var string $country = "Indonesia"; // default properties value
     var ?string $kecamatan = null; // Nullable Properties sejak PHP 7.4
 
+    // constructor
+    public function __construct(string $name, ?string $address){
+        echo "call first" . PHP_EOL;
+        $this->name = $name;
+        $this->address = $address;
+    }
 
     function sayHello(string $name){
 

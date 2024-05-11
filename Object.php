@@ -8,8 +8,8 @@
 
 require_once "data\Person.php"; // import class
 
-$person1 = new Person();
-$person2 = new Person();
+$person1 = new Person("Budhi", "Tangerang");
+$person2 = new Person("Joko", "Tangerang");
 var_dump($person1);
 var_dump($person2);
 

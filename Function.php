@@ -11,7 +11,7 @@
 
 require_once "data/Person.php";
 
-$person = new Person(); // instance
+$person = new Person("budhi", "Tangerang"); // instance
 
 $person->name = "budhi";
 $person->address = "Tangerang";
