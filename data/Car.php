@@ -11,11 +11,25 @@
  * ● Di interface kita tidak boleh memiliki properties, kita hanya boleh memiliki constant
  * ● Untuk mewariskan interface, kita tidak menggunakan kata kunci extends, melainkan implements
  * ● Dan berbeda dengan class, kita bisa implements lebih dari satu interface
+ *
+ * Interface Inheritance
+ * ● Sebelumnya kita sudah tahu kalo di PHP, child class hanya bisa punya 1 class parent
+ * ● Namun berbeda dengan interface, sebuah child class bisa implement lebih dari 1 interface
+ * ● Bahkan interface pun bisa implement interface lain, bisa lebih dari 1. Namun jika interface ingin
+ *    mewarisi interface lain, kita menggunakan kata kunci extends, bukan implements
  */
 
 namespace Data;
 
-interface Car
+interface HasBrand{
+    function getBrand(): string;
+}
+
+interface IsMaintenance{
+    function IsMaintenance(): bool;
+}
+
+interface Car extends HasBrand
 {
 
     function drive(): void;
@@ -24,7 +38,7 @@ interface Car
 
 }
 
-class Inova implements Car {
+class Inova implements Car, IsMaintenance {
 
     function drive(): void
     {
@@ -34,5 +48,15 @@ class Inova implements Car {
     function getTire(): int
     {
        return 4;
+    }
+
+    function getBrand(): string
+    {
+        return "Toyota";
+    }
+
+    function IsMaintenance(): bool
+    {
+       return true;
     }
 }
